@@ -1,36 +1,270 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html {
+            width: 100%; height: 100%;
+        }
         body {
-            background: rebeccapurple;
+            width: 100%; height: 100%;
+            font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: beige;
+            background-color: black;
         }
-        .hat {
+        h1, h2, h3 {
+            margin: 0 0 30px;
+            text-transform: uppercase;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        p {
+            margin: 0 0 20px;
+            font-size: 16px;
+            line-height: 1;
+        }
+        @media (min-width: 768px) {
+            p {
+                margin: 0 0 35px;
+                font-size: 18px;
+                line-height: 1.2;
+            }
+        }
+        a {
+            color: navajowhite;
+            transition: all 0.25s ease-in-out;
+        }
+        a:hover, a:focus {
+            text-decoration: none;
+            color: ghostwhite;
+        }
+
+        .intro {
+            display: table;
             width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: navy;
+            background-size: cover;
         }
-        .headTable {
-            margin: 0 auto;
-            font-family: "Comic Sans", "Comic Sans MS", sans-serif;
-            color: yellow;
-            font-size: x-large;
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
         }
+        .intro .intro-body .brand-heading {
+            font-size: 36px;
+        }
+        .intro .intro-body .intro-text {
+            font-size: 16px;
+        }
+
+
+        #about {
+            padding: 20px;
+            font-size: 18px;
+        }
+        #about .brand-heading {
+            text-align: center;
+        }
+
+
+
+        #references {
+            padding: 20px;
+            background: midnightblue;
+            background-size: cover;
+        }
+        #references .brand-heading {
+            text-align: center;
+            padding: 20px;
+            font-size: 26px;
+        }
+
+        * .brand-heading {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .intro {
+                height: 100%;
+                padding: 0;
+            }
+            .intro .intro-body .brand-heading {
+                font-size: 100px;
+            }
+            .intro .intro-body .intro-text {
+                font-size: 26px;
+            }
+            * .brand-heading {
+                font-size: 50px;
+                padding: 20px;
+                text-align: center;
+            }
+
+            #about {
+                font-size: 24px;
+            }
+        }
+        .btn-circle {
+            width: 70px;
+            height: 70px;
+            margin-top: 15px;
+            padding: 7px 16px;
+            border: 2px solid white;
+            border-radius: 100% !important;
+            font-size: 40px;
+            color: white;
+            background: transparent;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn-circle:hover,
+        .btn-circle:focus {
+            outline: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
     </style>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-	<meta charset="utf-8" />
 </head>
 <body>
-    <header class="hat">
-        <table class="headTable">
-            <tr id="headRow">
-                <td>Работы</td>
-                <td>Галерея</td>
-                <td>Домой</td>
-                <td>О себе</td>
-                <td>Контакты</td>
-            </tr>
-        </table>
+    <div class="navbar-wrapper">
+        <div class="cotainer">
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed"
+                                data-toggle="collapse" data-target="#navbar"
+                                aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Web-task</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="#">Главная</a>
+                            </li>
+                            <li>
+                                <a href="#about">О себе</a>
+                            </li>
+                            <li>
+                                <a href="#references">Контакты</a>
+                            </li>
+                            <li>
+                                <a href="gallery.html">Галерея</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Welcome</h1>
+                        <p class="intro-text">
+                            Добро пожаловать на мой скромный сайт!
+                        </p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
-    <div class="container"></div>
+
+    <section id="about">
+        <div id="about-container" class="container">
+            <div class="row">
+                <div id="about-content" class="col-md-8 col-md-offset-2">
+                    <p class="lead">
+                        <u>О себе</u>
+                        <br>
+                        Колиниченко Александр,
+                        студент третьего курса в Уральском Федеральном Университете (г. Екатеринбург).
+                    </p>
+                    <h1>Чего могу предложить</h1>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h1>back-end</h1>
+                            <p>
+                                Обладаю знанием в разработке на языках C#, Java и Python3.
+                                Знаком с принципами ООП, пишу чистый и понятный код.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h1>front-end</h1>
+                            <p>
+                                Знаком с HTML5 и CSS3, а также Bootstrap и системой grid960.
+                                Пишу сайты и кроссбраузерные веб-приложения, в том числе и мобильные.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h1>math</h1>
+                            <p>
+                                Разбираюсь в различных областях математики.
+                                Могу работать в научных проектах или просто преподавать.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="references">
+        <div id="refs-container" class="container">
+            <div class="row">
+                <div id="refs-content" class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Drop some featurettes of places and links</h1>
+                    <p>Performed suspicion in certainty so frankness by attention pretended.
+                        Newspaper or in tolerably education enjoyment.
+                        Extremity excellent certainty discourse sincerity no he so resembled.
+                        Joy house worse arise total boy but. Elderly up chicken do at feeling is.
+                        Like seen drew no make fond at on rent.
+                        Behaviour extremely her explained situation yet september gentleman are who.
+                        Is thought or pointed hearing he.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery-prev">
+        <div id="gal-container" class="container">
+            <div class="container">
+                <h1 class="brand-heading">This section will be used for gallery preview.</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
