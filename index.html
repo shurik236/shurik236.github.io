@@ -19,6 +19,7 @@
     <style type="text/css">
         html {
             width: 100%; height: 100%;
+            min-width: 360px;
         }
         body {
             width: 100%; height: 100%;
@@ -60,8 +61,8 @@
             height: auto;
             padding: 100px 0;
             text-align: center;
-            color: white;
-            background: navy;
+            color: ghostwhite;
+            background: url('sea-1097417_1920.jpg');
             background-size: cover;
         }
         .intro .intro-body {
@@ -75,16 +76,41 @@
             font-size: 16px;
         }
 
-
         #about {
-            padding: 20px;
             font-size: 18px;
+            background: #3c3c3c;
         }
         #about .brand-heading {
             text-align: center;
         }
+        #about h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+        #about p {
+            padding: 15px;
+        }
+        #about img {
+            padding: 0;
+        }
+
+        #about #my-features .thumbnail {
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
 
+        #back-end {
+            background: url("gear.png") no-repeat;
+        }
+
+        #front-end {
+            background: url("dev.png") no-repeat;
+        }
+
+        #math {
+            background: url("calculator.png") no-repeat;
+        }
 
         #references {
             padding: 20px;
@@ -99,6 +125,57 @@
 
         * .brand-heading {
             text-align: center;
+            margin: 0;
+        }
+
+        .btn-circle {
+            width: 70px;
+            height: 70px;
+            margin-top: 15px;
+            padding: 7px 16px;
+            border: 2px solid white;
+            border-radius: 100% !important;
+            font-size: 40px;
+            color: white;
+            background: transparent;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn-circle:hover,
+        .btn-circle:focus {
+            outline: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .thumbnail {
+            background: #333333;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .thumbnail p {
+            margin: 0;
+            padding-left: 2px;
+            padding-right: 2px;
+            font-size: 12px;
+        }
+
+        .thumbnail img {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #references {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .thumbnail .text-container {
+            padding: 0;
+        }
+
+        .thumbnail .text-container {
+            word-wrap: break-word;
         }
 
         @media (min-width: 768px) {
@@ -121,25 +198,23 @@
             #about {
                 font-size: 24px;
             }
+
+            .thumbnail p {
+                font-size: 16px;
+            }
+
+            .thumbnail .text-container {
+                padding-right: 0;
+            }
+
+            .equal, .equal > div[class*='col-'] {
+                display: -webkit-flex;
+                display: flex;
+                flex:1 1 auto;
+            }
+
         }
-        .btn-circle {
-            width: 70px;
-            height: 70px;
-            margin-top: 15px;
-            padding: 7px 16px;
-            border: 2px solid white;
-            border-radius: 100% !important;
-            font-size: 40px;
-            color: white;
-            background: transparent;
-            transition: background 0.3s ease-in-out;
-        }
-        .btn-circle:hover,
-        .btn-circle:focus {
-            outline: none;
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-        }
+
 
     </style>
 </head>
@@ -199,56 +274,117 @@
 
     <section id="about">
         <div id="about-container" class="container">
-            <div class="row">
-                <div id="about-content" class="col-md-8 col-md-offset-2">
-                    <p class="lead">
-                        <u>О себе</u>
-                        <br>
-                        Колиниченко Александр,
-                        студент третьего курса в Уральском Федеральном Университете (г. Екатеринбург).
-                    </p>
-                    <h1>Чего могу предложить</h1>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h1>back-end</h1>
-                            <p>
-                                Обладаю знанием в разработке на языках C#, Java и Python3.
-                                Знаком с принципами ООП, пишу чистый и понятный код.
+                <div id="about-content" class="col-md-12">
+                    <div class="featurette col-md-8 col-md-offset-2">
+                        <div class="thumbnail row">
+                            <img class="col-md-3" src="my-photo.jpg">
+                            <div class="col-md-9 text-container">
+                                <p class="lead">
+                                    <u>О себе</u>
+                                    <br>
+                                    Колиниченко Александр,
+                                    студент третьего курса в Уральском Федеральном Университете (г. Екатеринбург).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h1 class="brand-heading">Чего могу предложить</h1>
+                    </div>
+                    <div class="container col-md-12 col-sm-12">
+                        <div id="my-features" class="row col-md-12 col-sm-12 equal">
+                            <div id="back-end" class="col-xs-12 col-sm-4 col-lg-4 thumbnail">
+                                <div class="text-container">
+                                    <h1>back-end</h1>
+                                    <p>
+                                        Обладаю знанием в разработке на языках C#, Java и Python3.
+                                        Знаком с принципами ООП, пишу чистый и понятный код.
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="front-end" class="col-xs-12 col-sm-4 col-lg-4 thumbnail">
+                                <div class="text-container">
+                                    <h1>front-end</h1>
+                                    <p>
+                                        Знаком с HTML5 и CSS3, а также Bootstrap и системой grid960.
+                                        Пишу сайты и кроссбраузерные веб-приложения, в том числе и мобильные.
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="math" class="col-xs-12 col-sm-4 col-lg-4 thumbnail">
+                                <div class="text-container">
+                                    <h1>math</h1>
+                                    <p>
+                                        Разбираюсь в различных областях математики.
+                                        Могу работать в научных проектах или преподавать программу
+                                        старших классов и первых курсов.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clearfix visible-xs-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="references">
+        <div id="refs-container" class="container">
+            <h1 class="brand-heading">Как меня найти?</h1>
+            <div class="row col-md-10 col-md-offset-1
+             col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                <div class="col-md-6 col-sm-6 featurette">
+                    <div class="row thumbnail">
+                        <img src="urfu.jpg" class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="text-container col-md-7 col-sm-7 col-xs-7">
+                            <p>Найдите меня в Уральском Федеральном
+                                <br>
+                                <a href="http://urfu.ru/ru/">urfu.ru</a>
                             </p>
                         </div>
-                        <div class="col-md-4">
-                            <h1>front-end</h1>
-                            <p>
-                                Знаком с HTML5 и CSS3, а также Bootstrap и системой grid960.
-                                Пишу сайты и кроссбраузерные веб-приложения, в том числе и мобильные.
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <h1>math</h1>
-                            <p>
-                                Разбираюсь в различных областях математики.
-                                Могу работать в научных проектах или просто преподавать.
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 featurette">
+                    <div class="row thumbnail">
+                        <img src="GitHub_Logo.png" class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="text-container col-md-7 col-sm-7 col-xs-7">
+                            <p>Загляните на мой GitHub
+                                <br>
+                                <a href="https://github.com/shurik236">github.com/shurik236</a>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="references">
-        <div id="refs-container" class="container">
-            <div class="row">
-                <div id="refs-content" class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Drop some featurettes of places and links</h1>
-                    <p>Performed suspicion in certainty so frankness by attention pretended.
-                        Newspaper or in tolerably education enjoyment.
-                        Extremity excellent certainty discourse sincerity no he so resembled.
-                        Joy house worse arise total boy but. Elderly up chicken do at feeling is.
-                        Like seen drew no make fond at on rent.
-                        Behaviour extremely her explained situation yet september gentleman are who.
-                        Is thought or pointed hearing he.
-                    </p>
+            <div class="row col-md-10 col-md-offset-1
+             col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                <div class="col-md-6 col-sm-6 featurette">
+                    <div class="row thumbnail">
+                        <img src="social_media.jpg" class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="text-container col-md-7 col-sm-7 col-xs-7">
+                            <p>Пишите мне в соцсетях
+                                <br>
+                                <a href="https://www.facebook.com/alexander.kolinichenko">
+                                    facebook
+                                </a>
+                                <br>
+                                <a href="https://vk.com/id267695898">
+                                    ВКонтакте
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 featurette">
+                    <div class="row thumbnail">
+                        <img src="letters-1724704_640.jpg" class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="text-container col-md-7 col-sm-7 col-xs-7">
+                            <p>Напишите мне письмо
+                                <br>
+                                <a href="mailto:shurik918@gmail.com?Subject=Hello!" target="_top">shurik918@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
