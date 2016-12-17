@@ -19,6 +19,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="gal.js"></script>
+
+
     <style type="text/css">
         html {
             width: 100%; height: 100%;
@@ -207,12 +210,15 @@
                 height: 100%;
                 padding: 0;
             }
+
             .intro .intro-body .brand-heading {
                 font-size: 100px;
             }
+
             .intro .intro-body .intro-text {
                 font-size: 26px;
             }
+
             * .brand-heading {
                 font-size: 50px;
                 padding: 20px;
@@ -234,13 +240,13 @@
             .equal, .equal > div[class*='col-'] {
                 display: -webkit-flex;
                 display: flex;
-                flex:1 1 auto;
+                flex: 1 1 auto;
             }
 
-
-
         }
+
     </style>
+
 </head>
 <body>
     <div class="navbar-wrapper">
@@ -423,67 +429,73 @@
 
         <div class="container">
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(1).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(1).jpg" alt="">
+                <a title="Image 1" class="thumbnail">
+                    <img id="img1" class="img-responsive" src="gallery/1.jpg" alt="" onclick="showPicture('gallery/1.jpg')">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(2).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(2).jpg" alt="">
+                <a title="Image 2" class="thumbnail">
+                    <img id="img2" class="img-responsive" src="gallery/2.jpg" alt="" onclick="showPicture('gallery/2.jpg')">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(3).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(3).jpg" alt="">
+                <a title="Image 3" class="thumbnail">
+                    <img id="img3" class="img-responsive" src="gallery/3.jpg" alt="" onclick="showPicture('gallery/3.jpg')">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(4).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(4).jpg" alt="">
+                <a title="Image 4" class="thumbnail">
+                    <img class="img-responsive" src="gallery/4.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(5).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(5).jpg" alt="">
+                <a title="Image 5" class="thumbnail">
+                    <img class="img-responsive" src="gallery/5.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(6).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(6).jpg" alt="">
+                <a title="Image 6" class="thumbnail">
+                    <img class="img-responsive" src="gallery/6.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/cat%20(7).jpg">
-                    <img class="img-responsive" src="gallery/cat%20(7).jpg" alt="">
+                <a title="Image 7" class="thumbnail">
+                    <img class="img-responsive" src="gallery/7.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/battleship.jpg">
-                    <img class="img-responsive" src="gallery/battleship.jpg" alt="">
+                <a title="Image 8" class="thumbnail">
+                    <img class="img-responsive" src="gallery/8.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/elmo.jpg">
-                    <img class="img-responsive" src="gallery/elmo.jpg" alt="">
+                <a title="Image 9" class="thumbnail">
+                    <img class="img-responsive" src="gallery/9.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/aurora.jpg">
-                    <img class="img-responsive" src="gallery/aurora.jpg" alt="">
+                <a title="Image 10" class="thumbnail">
+                    <img class="img-responsive" src="gallery/10.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/milky-way.jpg">
-                    <img class="img-responsive" src="gallery/milky-way.jpg" alt="">
+                <a title="Image 11" class="thumbnail">
+                    <img class="img-responsive" src="gallery/11.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="gallery/flash%20(1).jpg">
-                    <img class="img-responsive" src="gallery/flash%20(1).jpg" alt="">
+                <a title="Image 12" class="thumbnail">
+                    <img class="img-responsive" src="gallery/12.jpg" alt="">
                 </a>
             </div>
         </div>
     </section>
+    <div id="spinner" onload="load()" style="visibility: hidden;">
+        <img src = "" width = "640" height = "480"  id = "img" > <br />
+        <img src = "left_arrow.jpg"   onClick = "javascript: left_arrow()">
+        <img src = "right_arrow.jpg"  onClick = "javascript: right_arrow()">
+    </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
