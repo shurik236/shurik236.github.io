@@ -49,7 +49,6 @@ function galleryKeyHandler(event) {
         event.preventDefault();
     }
     event.returnValue = false;
-    console.log(event.returnValue);
 
 
     var current = pictureIsShown();
@@ -62,7 +61,6 @@ function galleryKeyHandler(event) {
     } else if (event.keyCode !== undefined) {
         code = event.keyCode;
     }
-    console.log(code);
 
     if (code === 'Esc' || code === 'Escape') {
         backToPrev();
@@ -88,7 +86,7 @@ function galleryKeyHandler(event) {
             current = 1;
         window.location.href = '#image' + current;
     }
-    
+
     return false;
 }
 
