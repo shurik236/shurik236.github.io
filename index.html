@@ -68,7 +68,6 @@
             padding: 100px 0;
             text-align: center;
             color: ghostwhite;
-            background: url('sea-1097417_1920.jpg');
             background-size: cover;
         }
         .intro .intro-body {
@@ -245,10 +244,81 @@
 
         }
 
+        .openImg img{
+            position: absolute;
+            vertical-align: middle;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 60%;
+            min-width: 600px;
+        }
+
+        .openImg .closeButton{
+            background-image: url("cross-16.png");
+            background-repeat: no-repeat;
+            background-color: transparent;
+            position: absolute;
+            top: 10%;
+            left: 95%;
+            height: 16px;
+            width: 16px;
+            z-index: 200;
+        }
+
+        .openImg .changeBgButton {
+            background-image: url("change-bg.png");
+            background-repeat: no-repeat;
+            background-color: transparent;
+            position: absolute;
+            top: 15%;
+            left: 95%;
+            height: 16px;
+            width: 16px;
+            z-index: 200;
+        }
+
+        .openImg {
+            display: none;
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+
+        .openImg:target {
+            background-image: url(dashinfinity.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(50, 50, 50, 0.6);
+            display: block;
+            visibility: visible;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        #help {
+            position: fixed;
+            display: none;
+            visibility: hidden;
+            background-color: #0f0f0f;
+            color: ghostwhite;
+            font-size: small;
+            top: 90%;
+            left: 0;
+            height: 10%;
+            width: 100%;
+            z-index: 10;
+        }
+
     </style>
 
 </head>
-<body>
+<body onload="load()">
     <div class="navbar-wrapper">
         <div class="cotainer">
             <nav class="navbar navbar-inverse navbar-static-top">
@@ -284,7 +354,7 @@
             </nav>
         </div>
     </div>
-    <header class="intro">
+    <header class="intro" id="intro">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -429,73 +499,135 @@
 
         <div class="container">
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 1" class="thumbnail">
-                    <img id="img1" class="img-responsive" src="gallery/1.jpg" alt="" onclick="showPicture('gallery/1.jpg')">
+                <a title="Image 1" href="#image1" class="thumbnail">
+                    <img class="img-responsive" src="gallery/1.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 2" class="thumbnail">
-                    <img id="img2" class="img-responsive" src="gallery/2.jpg" alt="" onclick="showPicture('gallery/2.jpg')">
+                <a title="Image 2" href="#image2" class="thumbnail">
+                    <img class="img-responsive" src="gallery/2.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 3" class="thumbnail">
-                    <img id="img3" class="img-responsive" src="gallery/3.jpg" alt="" onclick="showPicture('gallery/3.jpg')">
+                <a title="Image 3" href="#image3" class="thumbnail">
+                    <img class="img-responsive" src="gallery/3.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 4" class="thumbnail">
+                <a title="Image 4" href="#image4" class="thumbnail">
                     <img class="img-responsive" src="gallery/4.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 5" class="thumbnail">
+                <a title="Image 5" href="#image5" class="thumbnail">
                     <img class="img-responsive" src="gallery/5.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 6" class="thumbnail">
+                <a title="Image 6" href="#image6" class="thumbnail">
                     <img class="img-responsive" src="gallery/6.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 7" class="thumbnail">
+                <a title="Image 7" href="#image7" class="thumbnail">
                     <img class="img-responsive" src="gallery/7.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 8" class="thumbnail">
+                <a title="Image 8" href="#image8" class="thumbnail">
                     <img class="img-responsive" src="gallery/8.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 9" class="thumbnail">
+                <a title="Image 9" href="#image9" class="thumbnail">
                     <img class="img-responsive" src="gallery/9.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 10" class="thumbnail">
+                <a title="Image 10" href="#image10" class="thumbnail">
                     <img class="img-responsive" src="gallery/10.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 11" class="thumbnail">
+                <a title="Image 11" href="#image11" class="thumbnail">
                     <img class="img-responsive" src="gallery/11.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a title="Image 12" class="thumbnail">
+                <a title="Image 12" href="#image12" class="thumbnail">
                     <img class="img-responsive" src="gallery/12.jpg" alt="">
                 </a>
             </div>
         </div>
     </section>
-    <div id="spinner" onload="load()" style="visibility: hidden;">
-        <img src = "" width = "640" height = "480"  id = "img" > <br />
-        <img src = "left_arrow.jpg"   onClick = "javascript: left_arrow()">
-        <img src = "right_arrow.jpg"  onClick = "javascript: right_arrow()">
-    </div>
 
+    <div id="help">
+        <p>
+            Используйте стрелки для перемещения.<br>
+            Нажмите Esc или крестик чтобы выйти.<br>
+            Квадратная кнопка устанавливает текущую картинку фоном приветствия
+        </p>
+    </div>
+    <div class="openImg" id="image1">
+        <img class="img-responsive" src="gallery/1.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/1.jpg')"></div>
+    </div>
+    <div class="openImg" id="image2">
+        <img class="img-responsive" src="gallery/2.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/2.jpg')"></div>
+    </div>
+    <div class="openImg" id="image3">
+        <img class="img-responsive" src="gallery/3.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/3.jpg')"></div>
+    </div>
+    <div class="openImg" id="image4">
+        <img class="img-responsive" src="gallery/4.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/4.jpg')"></div>
+    </div>
+    <div class="openImg" id="image5">
+        <img class="img-responsive" src="gallery/5.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/5.jpg')"></div>
+    </div>
+    <div class="openImg" id="image6">
+        <img class="img-responsive" src="gallery/6.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/6.jpg')"></div>
+    </div>
+    <div class="openImg" id="image7">
+        <img class="img-responsive" src="gallery/7.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/7.jpg')"></div>
+    </div>
+    <div class="openImg" id="image8">
+        <img class="img-responsive" src="gallery/8.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/8.jpg')"></div>
+    </div>
+    <div class="openImg" id="image9">
+        <img class="img-responsive" src="gallery/9.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/9.jpg')"></div>
+    </div>
+    <div class="openImg" id="image10">
+        <img class="img-responsive" src="gallery/10.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/10.jpg')"></div>
+    </div>
+    <div class="openImg" id="image11">
+        <img class="img-responsive" src="gallery/11.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/11.jpg')"></div>
+    </div>
+    <div class="openImg" id="image12">
+        <img class="img-responsive" src="gallery/12.jpg">
+        <div class="closeButton" onclick="backToPrev()"></div>
+        <div class="changeBgButton" onclick="changeIntroBackground('gallery/12.jpg')"></div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
